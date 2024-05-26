@@ -1,21 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-let root = document.getElementById("root");
+const rootDiv = document.getElementById("root");
 
-let span = React.createElement("span", {}, "span text");
-const element = React.createElement(
-   'h1',
-   null,
-   'Hello My name is ',
-   React.createElement('span', null, 'Mrinal'),
-   ' Jain'
-);
-let headingOne = React.createElement("h1", {}, "Hello world...!");
-let headingTwo = React.createElement("h2", {}, "Hello world once again");
+const rootElement = ReactDOM.createRoot(rootDiv);
 
-let div = React.createElement("div", { className: "halwa", id: "puri" }, [headingOne, headingTwo, element]);
+// React Element
+const headerElement = <h1> Hello World..! I am Inevitable</h1>;
 
-let dom = ReactDOM.createRoot(root);
+// React Component
+const HeaderComponent = function () {
+  return <h1>This is a React Componenet in multiple lines of code </h1>;
+};
 
-dom.render(div);
+//! component composition
+const WebsiteBody = () => {
+  return (
+    <div>
+      {/* Three ways of rendering componnents */}
+      <HeaderComponent></HeaderComponent>
+      {HeaderComponent()}
+      <HeaderComponent />
+      <p> Paragraph belo composition component </p>
+    </div>
+  );
+};
+
+//! rendering react element
+// rootElement.render(headerElement);
+
+//! rendering react component
+rootElement.render(<WebsiteBody />);
+
+//! JSX work flow
+// JSX => Babel converts to React.creatElement => Becomes React Element(which is a Javascript Object) => Rendered as a HTML element by react DOM
