@@ -1,21 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+import { createRoot } from "react-dom/client";
+import { router } from "./router";
 
-let root = document.getElementById("root");
+const rootElement = document.getElementById("root");
 
-let span = React.createElement("span", {}, "span text");
-const element = React.createElement(
-   'h1',
-   null,
-   'Hello My name is ',
-   React.createElement('span', null, 'Mrinal'),
-   ' Jain'
-);
-let headingOne = React.createElement("h1", {}, "Hello world...!");
-let headingTwo = React.createElement("h2", {}, "Hello world once again");
+const reactRoot = createRoot(rootElement);
 
-let div = React.createElement("div", { className: "halwa", id: "puri" }, [headingOne, headingTwo, element]);
-
-let dom = ReactDOM.createRoot(root);
-
-dom.render(div);
+function App() {
+  return <RouterProvider router={router}></RouterProvider>;
+}
+reactRoot.render(<App />);

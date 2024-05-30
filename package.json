@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "This is Namaste React by Akshay Saini ",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1"
   },
   "browserslist": [
     "last 10 versions"
