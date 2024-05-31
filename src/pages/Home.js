@@ -6,7 +6,7 @@ function Home() {
     <div>
       <h1>Home Page </h1>
 
-      <ul>
+      <ul className="listing">
         <li>
           <Link to="/counter"> Counter using useState</Link>
         </li>
@@ -15,6 +15,12 @@ function Home() {
         </li>
         <li>
           <Link to="/todo"> TODO using useReducer</Link>
+        </li>
+        <li>
+          <Link to="/callback"> React.memo & React.useCallback </Link>
+        </li>
+        <li>
+          <Link to="/useRef">useRef example by input and counter</Link>
         </li>
       </ul>
     </div>
