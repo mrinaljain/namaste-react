@@ -11,6 +11,7 @@ import ClassComponent from "./src/pages/ClassComponent";
 import SetStateComponent from "./src/pages/SetStateComponent";
 import ControlledInput from "./src/pages/ControlledInput";
 import LifeCycle from "./src/pages/LifeCycye";
+import ReduxCounter from "./src/pages/redux/ReduxCounter";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
   },
   {
     path: "/lifecycle",
-    element: <LifeCycle name={"Mrinal"} />,
+    element: <LifeCycle />,
+  },
+  {
+    path: "/reduxcounter",
+    element: <ReduxCounter />,
   },
 ]);

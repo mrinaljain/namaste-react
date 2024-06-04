@@ -34,6 +34,9 @@ function Home() {
         <li>
           <Link to="/lifecycle">React Component Lifecycle</Link>
         </li>
+        <li>
+          <Link to="/reduxcounter">Redux Counter App</Link>
+        </li>
         {/* //renderToString */}
       </ul>
     </div>
