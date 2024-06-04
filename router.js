@@ -52,6 +52,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/lifecycle",
-    element: <LifeCycle />,
+    element: <LifeCycle name={"Mrinal"} />,
   },
 ]);
