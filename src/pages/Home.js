@@ -22,6 +22,19 @@ function Home() {
         <li>
           <Link to="/useRef">useRef example by input and counter</Link>
         </li>
+        <li>
+          <Link to="/props">Props inside Functional Component</Link>
+        </li>
+        <li>
+          <Link to="/classComponent">Class Component</Link>
+        </li>
+        <li>
+          <Link to="/controlledInput">Controlled Input</Link>
+        </li>
+        <li>
+          <Link to="/lifecycle">React Component Lifecycle</Link>
+        </li>
+        {/* //renderToString */}
       </ul>
     </div>
   );
