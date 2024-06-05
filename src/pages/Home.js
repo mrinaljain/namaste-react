@@ -37,6 +37,9 @@ function Home() {
         <li>
           <Link to="/reduxcounter">Redux Counter App</Link>
         </li>
+        <li>
+          <Link to="/countryselector">Country Selector Challange</Link>
+        </li>
         {/* //renderToString */}
       </ul>
     </div>
