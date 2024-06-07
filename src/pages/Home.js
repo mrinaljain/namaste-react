@@ -40,6 +40,12 @@ function Home() {
         <li>
           <Link to="/countryselector">Country Selector Challange</Link>
         </li>
+        <li>
+          <Link to="/virtualdom">Virtual DOM</Link>
+        </li>
+        <li>
+          <Link to="/importexport">Import / Export</Link>
+        </li>
         {/* //renderToString */}
       </ul>
     </div>

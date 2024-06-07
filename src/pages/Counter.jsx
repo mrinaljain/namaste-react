@@ -23,6 +23,7 @@ function Counter() {
          </div>
          <ul>
             <li>State variable will re render the component every time the value changes</li>
+            <li>useState is used to create a variable(state) with super powers of React</li>
          </ul>
       </div>
    );

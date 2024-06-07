@@ -13,6 +13,8 @@ import ControlledInput from "./src/pages/ControlledInput";
 import LifeCycle from "./src/pages/LifeCycye";
 import ReduxCounter from "./src/pages/redux/ReduxCounter";
 import CountrySelector from "./src/pages/CountrySelector";
+import VirtualDOM from "./src/pages/VirtualDOM";
+import ImportExport from "./src/pages/ImportExport";
 
 export const router = createBrowserRouter([
   {
@@ -63,5 +65,13 @@ export const router = createBrowserRouter([
   {
     path: "/countryselector",
     element: <CountrySelector />,
+  },
+  {
+    path: "/virtualdom",
+    element: <VirtualDOM />,
+  },
+  {
+    path: "/importexport",
+    element: <ImportExport />,
   },
 ]);
