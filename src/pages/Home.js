@@ -46,6 +46,9 @@ function Home() {
         <li>
           <Link to="/importexport">Import / Export</Link>
         </li>
+        <li>
+          <Link to="/hooks">React Hooks</Link>
+        </li>
         {/* //renderToString */}
       </ul>
     </div>

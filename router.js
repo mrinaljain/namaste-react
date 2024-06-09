@@ -4,8 +4,7 @@ import Home from "./src/pages/Home";
 import Counter from "./src/pages/Counter";
 import CounterReducer from "./src/pages/CounterReducer";
 import ToDoReducer from "./src/pages/ToDoReducer";
-import Callback from "./src/pages/Callback";
-import UseRef from "./src/pages/UseRef";
+import UseRef from "./src/pages/hooks/UseRef";
 import Props from "./src/pages/props/Props";
 import ClassComponent from "./src/pages/ClassComponent";
 import SetStateComponent from "./src/pages/SetStateComponent";
@@ -15,6 +14,10 @@ import ReduxCounter from "./src/pages/redux/ReduxCounter";
 import CountrySelector from "./src/pages/CountrySelector";
 import VirtualDOM from "./src/pages/VirtualDOM";
 import ImportExport from "./src/pages/ImportExport";
+import UseState from "./src/pages/hooks/useState";
+import Hooks from "./src/pages/hooks/Hooks";
+import UseMemo from "./src/pages/hooks/UseMemo";
+import UseCallback from "./src/pages/hooks/UseCallback";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +38,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/callback",
-    element: <Callback />,
+    element: <UseState />,
   },
   {
     path: "/useRef",
@@ -73,5 +76,23 @@ export const router = createBrowserRouter([
   {
     path: "/importexport",
     element: <ImportExport />,
+  },
+  {
+    path: "/hooks",
+    element: <Hooks />,
+    children: [
+      {
+        path: "usememo",
+        element: <UseMemo />,
+      },
+      {
+        path: "usecallback",
+        element: <UseCallback />,
+      },
+      {
+        path: "useref",
+        element: <UseRef />,
+      },
+    ],
   },
 ]);
