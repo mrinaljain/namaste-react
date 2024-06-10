@@ -18,6 +18,9 @@ import UseState from "./src/pages/hooks/useState";
 import Hooks from "./src/pages/hooks/Hooks";
 import UseMemo from "./src/pages/hooks/UseMemo";
 import UseCallback from "./src/pages/hooks/UseCallback";
+import ChildProps from "./src/pages/child_props/ChildProps";
+import Portal from "./src/pages/Portal";
+import Todo from "./src/pages/todo/Todo";
 
 export const router = createBrowserRouter([
   {
@@ -76,6 +79,18 @@ export const router = createBrowserRouter([
   {
     path: "/importexport",
     element: <ImportExport />,
+  },
+  {
+    path: "/childprops",
+    element: <ChildProps />,
+  },
+  {
+    path: "/portal",
+    element: <Portal />,
+  },
+  {
+    path: "/todoapp",
+    element: <Todo />,
   },
   {
     path: "/hooks",

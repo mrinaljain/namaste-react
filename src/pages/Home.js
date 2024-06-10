@@ -49,6 +49,15 @@ function Home() {
         <li>
           <Link to="/hooks">React Hooks</Link>
         </li>
+        <li>
+          <Link to="/childprops">Children Props in React</Link>
+        </li>
+        <li>
+          <Link to="/portal">Portals in react</Link>
+        </li>
+        <li>
+          <Link to="/todoapp">TODO App</Link>
+        </li>
         {/* //renderToString */}
       </ul>
     </div>
