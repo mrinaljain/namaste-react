@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./src/pages/Home";
 import Counter from "./src/pages/Counter";
@@ -21,6 +21,11 @@ import UseCallback from "./src/pages/hooks/UseCallback";
 import ChildProps from "./src/pages/child_props/ChildProps";
 import Portal from "./src/pages/Portal";
 import Todo from "./src/pages/todo/Todo";
+import UseEffect from "./src/pages/hooks/UseEffect";
+import ReactContext from "./src/pages/react_context/ReactContext";
+import HigherOrderComponent from "./src/pages/higher_order/HigherOrderComponent";
+
+const Lazycomp = lazy(() => import("./src/pages/LazyComponent"));
 
 export const router = createBrowserRouter([
   {
@@ -93,6 +98,22 @@ export const router = createBrowserRouter([
     element: <Todo />,
   },
   {
+    path: "/reactcontext",
+    element: <ReactContext />,
+  },
+  {
+    path: "/hocomponent",
+    element: <HigherOrderComponent />,
+  },
+  {
+    path: "/lazycomponent",
+    element: (
+      <Suspense>
+        <Lazycomp />
+      </Suspense>
+    ),
+  },
+  {
     path: "/hooks",
     element: <Hooks />,
     children: [
@@ -107,6 +128,10 @@ export const router = createBrowserRouter([
       {
         path: "useref",
         element: <UseRef />,
+      },
+      {
+        path: "useeffect",
+        element: <UseEffect />,
       },
     ],
   },
