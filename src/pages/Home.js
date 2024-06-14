@@ -43,6 +43,7 @@ function Home() {
         <Link to="/reactcontext">React Context API</Link>
         <Link to="/lazycomponent">Lazy Component</Link>
         <Link to="/hocomponent">Higher Order Component</Link>
+        <Link to="/timer">Timer</Link>
 
         {/* //renderToString */}
       </div>
