@@ -8,10 +8,11 @@ class LifeCycle extends React.Component {
          name: "mrinal"
       }
       this.changeProp = this.changeProp.bind(this);
+      console.log("Parent : Constructor");
    }
    //[depricated] Just Before Render (mount hone k pehle) 
    UNSAFE_componentWillMount() {
-      console.log("Parent : Component  about to Mount");
+      console.log("Parent : Will Mount");
    }
    changeProp() {
       this.setState({ name: "newName" })
@@ -19,6 +20,7 @@ class LifeCycle extends React.Component {
 
 
    render() {
+      console.log("Parent : Render");
       return (
          <div>
             <h1>React LifeCycle Events</h1>
@@ -26,7 +28,10 @@ class LifeCycle extends React.Component {
             <h2>{this.state.count}</h2>
             <ChildLifeCycle name={this.state.name} />
 
-            <button onClick={this.changeProp}> Change Prop</button>
+            <button
+               className="border px-2 py-1 bg-red-300"
+               onClick={this.changeProp}> Change Prop</button>
+            <h2>Order of Execution</h2>
             <ul>
                <li>didUpdate</li>
                <li>willUpdate</li>
@@ -40,19 +45,19 @@ class LifeCycle extends React.Component {
    }
    // called right after mount happen
    componentDidMount() {
-      console.log("Parent : Component  Mounted");
+      console.log("Parent : Did Mount");
    }
 
    // right before unMounting phase is about to start
    componentWillUnmount() {
-      console.log("Parent : Component about to UN Mount");
+      console.log("Parent : Will UnMount");
    }
 
    // called when component is rerenderes (after first mount)
    componentDidUpdate() {
-      console.log("Parent : Component  Re Rendered");
+      console.log("Parent : Did Update");
    }
-   componentDidCatch() { }
+
 
 }
 
@@ -63,20 +68,22 @@ class ChildLifeCycle extends React.Component {
 
    constructor(props) {
       super(props);
+      console.log("Child : Constructor");
    }
 
    // called when state. prop is changed and returns boolean
    shouldComponentUpdate(nextProps, nextState) {
       console.log(nextProps);
-      console.log("Child : Should I ReRender ?");
+      console.log("Child : Should Update?");
       return true;
    }
    //[depricated] Just Before Render (mount hone k pehle) 
    UNSAFE_componentWillMount() {
-      console.log("Child : Component  about to Mount");
+      console.log("Child : Will Mount");
    }
 
    render() {
+      console.log("Child : Render");
       return (
          <div>
             <h2>Child Lifecycle</h2>
@@ -86,16 +93,16 @@ class ChildLifeCycle extends React.Component {
    }
    // called right after mount happen
    componentDidMount() {
-      console.log("Child : Component  Mounted");
+      console.log("Child : Did Mount");
    }
 
    // right before unMounting phase is about to start
    componentWillUnmount() {
-      console.log("Child : Component about to UN Mount");
+      console.log("Child : Will UnMount");
    }
 
    // called when component is rerenderes (after first mount)
    componentDidUpdate() {
-      console.log("Child :Component Re Rendered");
+      console.log("Child : Did Update");
    }
 }

@@ -1,51 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import pageData from "../utils/pageData";
 
 function Home() {
+  const [inputText, setInputText] = useState("");
+  const [routeData, setRouteData] = useState(pageData);
+  let filteredPageData = routeData;
+  function handleChange(e) {
+    setInputText(e.target.value);
+  }
+  if (inputText.length > 0) {
+    filteredPageData = routeData.filter((item) => {
+      return item.pageName.toLowerCase().includes(inputText.toLowerCase());
+    });
+    console.log(filteredPageData);
+  } else {
+    filteredPageData = routeData;
+  }
+
   return (
-    <div>
-      <h1>Home Page </h1>
-
-      <div className="listing flex flex-col gap-5">
-        <Link to="/counter">Counter using useState</Link>
-
-        <Link to="/counter2"> Counter using useReducer</Link>
-
-        <Link to="/todo"> TODO using useReducer</Link>
-
-        <Link to="/callback"> React.memo & React.useCallback </Link>
-
-        <Link to="/useRef">useRef example by input and counter</Link>
-
-        <Link to="/props">Props inside Functional Component</Link>
-
-        <Link to="/classComponent">Class Component</Link>
-
-        <Link to="/controlledInput">Controlled Input</Link>
-
-        <Link to="/lifecycle">React Component Lifecycle</Link>
-
-        <Link to="/reduxcounter">Redux Counter App</Link>
-
-        <Link to="/countryselector">Country Selector Challange</Link>
-
-        <Link to="/virtualdom">Virtual DOM</Link>
-
-        <Link to="/importexport">Import / Export</Link>
-
-        <Link to="/hooks">React Hooks</Link>
-
-        <Link to="/childprops">Children Props in React</Link>
-
-        <Link to="/portal">Portals in react</Link>
-
-        <Link to="/todoapp">TODO App</Link>
-        <Link to="/reactcontext">React Context API</Link>
-        <Link to="/lazycomponent">Lazy Component</Link>
-        <Link to="/hocomponent">Higher Order Component</Link>
-        <Link to="/timer">Timer</Link>
-
-        {/* //renderToString */}
+    <div className="h-[100vh] p-5">
+      <input
+        type="text"
+        className="border-red-400 border-2 rounded flex justify-around w-80 py-2 px-2 mx-auto"
+        value={inputText}
+        placeholder="Search"
+        onChange={handleChange}
+      />
+      <div className="flex h-full flex-wrap gap-8 content-center justify-center">
+        {filteredPageData.map((route) => (
+          <Link
+            className="px-2 py-1 bg-purple-300 rounded-md cursor-pointer"
+            to={route.to}
+          >
+            {route.pageName}
+          </Link>
+        ))}
       </div>
     </div>
   );
