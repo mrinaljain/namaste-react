@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+// STEP 1. Find the root element on the DOM where you want to run the React library 
 let root = document.getElementById("root");
 
-let span = React.createElement("span", {}, "span text");
+// STEP 2. Create a HTML element dynamically and store it in a var
+// createElement takes 2 
+let span = React.createElement("span", {id:"halwa", key:"ij"}, "span text");
+
 const element = React.createElement(
   "h1",
   null,
@@ -20,6 +24,7 @@ let div = React.createElement("div", { className: "halwa", id: "puri" }, [
   element,
 ]);
 
+// STEP : Tell react about your react ROOT on DOM
 let dom = ReactDOM.createRoot(root);
 
-dom.render(div);
+dom.render(span);

@@ -1,7 +1,7 @@
-import React from "react";
+import { Component } from "react";
 import { Outlet } from "react-router-dom";
 
-class ClassComponent extends React.Component {
+class ClassComponent extends Component {
    constructor(props) {
       super(props);
    }

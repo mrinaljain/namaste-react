@@ -19,9 +19,10 @@ class SetStateComponent extends React.Component {
    }
 
    updateName() {
+      // Directlly update state
       this.setState({ name: "Updated Name" });
    }
-   // Access state as well as props inside setstate
+   // Access state as well as props inside setstate and then update the state
    square() {
       this.setState((state, prop) => {
          console.log("prop", prop);

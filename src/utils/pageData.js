@@ -114,6 +114,11 @@ const routesData = [
     component: "Timer",
     pageName: "Timer",
   },
+  {
+    to: "/ref",
+    component: "Ref",
+    pageName: "Ref",
+  },
 ];
 
 export default routesData;

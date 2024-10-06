@@ -10,6 +10,7 @@ class LifeCycle extends React.Component {
       this.changeProp = this.changeProp.bind(this);
       console.log("Parent : Constructor");
    }
+   componentWillUpdate() { }
    //[depricated] Just Before Render (mount hone k pehle) 
    UNSAFE_componentWillMount() {
       console.log("Parent : Will Mount");
