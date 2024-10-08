@@ -34,10 +34,11 @@ class LifeCycle extends React.Component {
                onClick={this.changeProp}> Change Prop</button>
             <h2>Order of Execution</h2>
             <ul>
+               <li>didMount</li>
                <li>didUpdate</li>
                <li>willUpdate</li>
                <li>willMount</li>
-               <li>didMount</li>
+
                <li>willUnMount</li>
                <li>shouldUpdate</li>
             </ul>
