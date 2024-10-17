@@ -24,3 +24,26 @@
 ### CORSS issue 
 https://cors-anywhere.herokuapp.com
 
+
+
+# Lifecycle hooks
+- constructor
+- render
+- componentWillMount
+- componentDidMount
+- componentShouldUpdate
+- componentDidUpdate
+- commmponentwillUnmount
+
+
+
+
+
+
+
+### Questions
+
+- Statefull and Stateless components?
+- Diffrence between controlled and uncontrolled components?
+- What are diffrent lifecycle hooks?
+- Explain working of Redux.
