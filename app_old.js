@@ -28,3 +28,8 @@ let div = React.createElement("div", { className: "halwa", id: "puri" }, [
 let dom = ReactDOM.createRoot(root);
 
 dom.render(span);
+
+
+
+
+var image = React.createElement("img");

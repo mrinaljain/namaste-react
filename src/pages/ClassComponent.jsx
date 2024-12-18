@@ -11,6 +11,7 @@ class ClassComponent extends Component {
          <div>
             <h1>Class Component</h1>
             <hr />
+
             <Outlet />
          </div>
       )
