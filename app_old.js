@@ -18,6 +18,7 @@ const element = React.createElement(
 let headingOne = React.createElement("h1", {}, "Hello world...!");
 let headingTwo = React.createElement("h2", {}, "Hello world once again");
 
+// Example for createElement
 let div = React.createElement("div", { className: "halwa", id: "puri" }, [
   headingOne,
   headingTwo,

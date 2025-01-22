@@ -86,8 +86,10 @@ https://cors-anywhere.herokuapp.com
 - Are custom DOM attributes supported in React v16?
 - How to add Google Analytics for React Router?
 - Is it possible to use async/await in plain React?
+- Why are 2 react script files imported ?
 
-
+- why do we write crossorigin in script tag ?
+  to tell browser that we need to send credentials or nor ( ananomous , use-credentials ) are the two possible values.
 
 
 
