@@ -119,6 +119,11 @@ const routesData = [
     component: "Ref",
     pageName: "Ref",
   },
+  {
+    to: "/props",
+    component: "Props",
+    pageName: "Props",
+  },
 ];
 
 export default routesData;

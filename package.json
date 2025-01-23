@@ -4,7 +4,7 @@
   "description": "This is Namaste React by Mrinal Jain",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
+    "start": "rm -rf .parcel-cache && parcel index.html",
     "build": "parcel build index.html"
   },
   "repository": {
