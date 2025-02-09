@@ -21,9 +21,22 @@
 Super power which will change make the app / code production ready. Bundler is an orchastrator which manages everything
 
 ##### Diffrence between tilde ~ and caret ^
-  - ^  auto PATCH update  ^ 2.8.3 --> 2.8.9 (max)
-  - ~  auto MINOR update  ~ 2.8.3 --> 2.9.0 and more
+  -  ^ auto PATCH/MINOR update 
+  ```
+  Examples:
+    ^1.2.3 matches >= 1.2.3 <2.0.0.
+    ^0.2.3 matches >= 0.2.3 <0.3.0.
+    ^0.0.3 matches >= 0.0.3 <0.0.4.
+  ```
 
+
+
+  -  ~  auto PATCH update only 
+  ```
+  Examples:
+    ~1.2.3 matches >=1.2.3 <1.3.0.
+    ~0.2.3 matches >=0.2.3 <0.3.0.
+  ```
 
  ![Package details](https://media.geeksforgeeks.org/wp-content/uploads/semver.png)
 

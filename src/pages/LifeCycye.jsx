@@ -1,21 +1,18 @@
 import React from "react";
 class LifeCycle extends React.Component {
-   constructor(props) {
-      super(props);
 
-      this.state = {
+   state = {
          count: 0,
          name: "mrinal"
       }
-      this.changeProp = this.changeProp.bind(this);
-      console.log("Parent : Constructor");
-   }
+
+
    componentWillUpdate() { }
    //[depricated] Just Before Render (mount hone k pehle) 
    UNSAFE_componentWillMount() {
       console.log("Parent : Will Mount");
    }
-   changeProp() {
+   changeProp = () => {
       this.setState({ name: "newName" })
    }
 
