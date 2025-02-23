@@ -3,6 +3,15 @@ A predictable State container for JS apps
 Complete Tutorial
 https://www.youtube.com/playlist?list=PLfEr2kn3s-br9ZFmejfLhAgMbGgbpdof8
 
+## Actions
+## Slice
+## reducer
+## Store
+## Dispatcher
+## Selection
+
+
+
 
 ### Steps to setup Redux
 

@@ -25,6 +25,7 @@ import UseEffect from "./src/pages/hooks/UseEffect";
 import ReactContext from "./src/pages/react_context/ReactContext";
 import HigherOrderComponent from "./src/pages/higher_order/HigherOrderComponent";
 import Timer from "./src/pages/Timer";
+import SkyDive from "./src/pages/SkyDive";
 
 const Lazycomp = lazy(() => import("./src/pages/LazyComponent"));
 
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/skyDive",
+    element: <SkyDive />,
   },
   {
     path: "/counter",

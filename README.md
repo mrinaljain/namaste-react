@@ -91,7 +91,7 @@ https://cors-anywhere.herokuapp.com
 - why do we write crossorigin in script tag ?
   to tell browser that we need to send credentials or nor ( ananomous , use-credentials ) are the two possible values.
 
-
+-  What is State in React and how do you manage it?
 
 
 ### TODO

@@ -1,0 +1,2 @@
+React is an open-source JavaScript library developed by Facebook for building user interfaces, especially for single-page applications.
+* It allows developers to create reusable UI components and manage the view layer of web and mobile apps in a declarative way.
