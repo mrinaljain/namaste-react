@@ -63,6 +63,7 @@ https://cors-anywhere.herokuapp.com
 - What are synthetic events in React?
 - What is the difference between Shadow DOM and Virtual DOM?
 - What is the difference between createElement and cloneElement?
+   - Clone with diffrent properties like class etc.
 - Does the lazy function support named exports?
    No
 - Why React uses className over class attribute?

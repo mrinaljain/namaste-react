@@ -40,6 +40,7 @@ const SkyDive = function(){
 
    useEffect(() => {
       getDates();
+      getTimeSlots("2025-03-07");
      return () => {     }
    }, [])
    
@@ -48,7 +49,7 @@ const SkyDive = function(){
          <h1 className="border-l-red-300 text-red-500">
             Welcome to Dubai SkyDive
          </h1>
-         {Object.keys(slots).length > 0 ? <Calender slot={slots} getTimeSlots={getTimeSlots} /> : <p>Loading...</p>}
+         {Object.keys(slots).length > 0 ? <Calender slot={slots} getTimeSlots={getTimeSlots} selectedDate="{currentDate}" /> : <p>Loading...</p>}
          
          <h2>Time Slots for {currentDate}</h2>
          {Object.keys(times).length > 0 ? <TimeSlots times={times}/> : <h4>Select Timings</h4>}
