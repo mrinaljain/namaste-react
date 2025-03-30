@@ -26,6 +26,7 @@ import ReactContext from "./src/pages/react_context/ReactContext";
 import HigherOrderComponent from "./src/pages/higher_order/HigherOrderComponent";
 import Timer from "./src/pages/Timer";
 import SkyDive from "./src/pages/SkyDive";
+import ForwardRef from "./src/pages/forward_ref/parent";
 
 const Lazycomp = lazy(() => import("./src/pages/LazyComponent"));
 
@@ -114,6 +115,10 @@ export const router = createBrowserRouter([
   {
     path: "/timer",
     element: <Timer />,
+  },
+  {
+    path: "/forwardRef",
+    element: <ForwardRef />,
   },
   {
     path: "/lazycomponent",

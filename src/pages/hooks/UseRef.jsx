@@ -24,6 +24,12 @@ function UseRef() {
    useEffect(() => {
       inputRef.current.focus();
    }, []);
+   //
+   let inputRefCallback = (node) => {
+      if (node) {
+         node.focus();
+      }
+   }
    return (
       <div>
          <h1>useRef Hook</h1>
@@ -31,7 +37,8 @@ function UseRef() {
          <h2>1. To use as a element selector</h2>
          <input
             type="text"
-            ref={inputRef}
+            // ref={inputRef}
+            ref={inputRefCallback}
             placeholder="Automatic Focus"
          >
          </input>

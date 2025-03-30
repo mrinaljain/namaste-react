@@ -1,14 +1,14 @@
 import React from 'react'
 import ContextChild from './ContextChild';
-import AppContext from '../../utils/appContext';
 import OutsideContextChild from './OutsideContextChild';
+import { Provider } from './appContext';
 function ReactContext() {
    return (
       <div className=''>
          <h1 className='text-3xl'>React Context</h1>
-         <AppContext.Provider value={{ name: "Mrinal Jain" }}>
+         <Provider value={{ name: "Mrinal Jain" }}>
             <ContextChild />
-         </AppContext.Provider>
+         </Provider>
          <OutsideContextChild />
          <hr />
          <ul>

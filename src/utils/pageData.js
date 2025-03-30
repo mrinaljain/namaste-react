@@ -124,6 +124,11 @@ const routesData = [
     component: "Props",
     pageName: "Props",
   },
+  {
+    to: "/forwardRef",
+    component: "forwardRef",
+    pageName: "forwardRef",
+  },
 ];
 
 export default routesData;

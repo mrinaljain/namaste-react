@@ -168,3 +168,188 @@ this.inputRef = React.createRef(undefined)
 ```
 
 #### 21. What are forward refs?
+
+ForwardRef is a Higher order component which is used to recive the useRef values from the parent component and pass it on to the child component.
+- so basically we pass useRef value as a prop from parent and iwe can't directly recive it in child so we have to wrap child with a HOC that is ForwardRef component.
+
+#### 22. Which is preferred option with in callback refs and findDOMNode()?
+Callback ref basicallay another way to add refs functionality to the DOM element.
+   - insted of using useRef hook we can directly provide a callback to the ref parameter .
+   ```
+   let inputRefCallback = (node) => {
+      if (node) {
+         node.focus();
+      }
+   }
+   <input type="text" ref={inputRefCallback} >
+   ```
+**callback refs** are prefered way because
+   - doesnot require useeffectto attach
+   - direct and fast
+
+
+#### 23.  Why are String Refs legacy?
+
+Old way of defining refs which is now replaced by useRef and callback refs
+
+#### 24. What is Virtual DOM?
+
+Virtual DOM is a javascript object like structure created by React in order to complete the reconciliation and DOM update process more fficiantly.
+   - It is the exact copy of original DOM
+   - it contains Js object not Nodes
+
+#### 25. How Virtual DOM works?
+
+Virtual DOM works on the algorthim of react fiber and the entire process is known as reconsiliation.
+- react creates a copy of original DOM
+- when any state, prop changes then re-render is triggerd
+- behind the scenes reach has another tree structure which react compares with the virtual DOM and makes changes in the Virtual DOM
+-finally with the help of diffing ALgorithm this changes are shifted to the Orignal DOM in batches.
+
+
+#### 29. What are controlled components?
+
+Controlled component in react are the ones whos values are controled by the react state variables and 
+- they re-render every time state variable changes
+
+#### 30. What are uncontrolled components?
+
+Uncontrolled components in react are the ones who are independent from the react state and there values can be read only using useRef
+- no  reender when value changes
+
+#### 31. What is the difference between createElement and cloneElement?
+
+create element creates new elemnt and cloneElement creates a copy of the element where we can change any properties.
+```
+React.createElement('div', {properties})
+
+React.cloneElement(elementToBeCopied, {newpropeeties/ properties to be overriden})
+```
+
+#### 32. What is Lifting State Up in React?
+
+In react there is only unidirectional flow of data is allowed that is from parent to child.
+so if there is a case when data of some child is required in some other child in that case the data is defined nearest common ancestor ,  and the data is passed via prop drilling to the bottom. 
+
+
+#### 33.[TODO] What are the different phases of component lifecycle?
+Coponent lifecycle has 2 phases
+- Render Phase
+- PRe commit phase 
+- Commit phase
+
+#### 34. What are the lifecycle methods of React?
+
+badiya jama k likhna hai answer so that i can speak it like a story
+
+
+#### 35. What are Higher-Order components?
+
+HOC components in react are an wraper arround the react components which unables us to reuse the component by adding some extea functionality on top of it.
+
+HOC takes a component as an input and returns a better version of it without affecting the props .
+
+Setps to create HOC As per defination HOC is acomponent that takes Component and returns modified version of it.
+1. Create a Component and take another component as parameter.
+2. in the return statement return another component that is basicaly a function in simple language.
+3. pass the props recived from HOC down to child Component.
+```
+
+function HOC(Component) {
+  
+   return (props)=> (
+      <>
+         <div>Modification</div>
+         <Component {...props}/>
+      </>
+      
+   )
+}
+```
+
+
+#### 36. How to create props proxy for HOC component?
+
+**Prop proxy** for HOC means adding new props in between while orignal props of components are being passed to the component.
+
+```
+function HOC(Component){
+
+return (props)=>{
+   let newProps = {
+      naem: "dsad",
+      clASS" "SADAS"
+   }
+   <>
+   <div> Modification </>
+   <Component {...newProps} {... props}/>
+   </>
+ } 
+}
+
+```
+
+#### 37. What is context?
+
+Context is a storage container/ shared global state in form of an Object , which acts as a common storage and single source of truth to all the childrens who are subscribed to its values.
+- it saves prop drilling
+
+```
+let {Provider, Consumer} = React.createContext({})
+```
+- in class components where useContext Hook is not available then Consumer can be used as alternative
+
+
+#### 38. What is children prop?
+
+Children prop is basicaly passing JSX elements to another component via putting them between opening and clossing tags.. and then accesing it as children attribute  in next widget
+```
+<ParentComponent props={props}>{jsx eements}</ParentComponent>
+
+
+function ChildComponent({props,children})=>{
+
+   return (
+      <div>
+       {childern}
+      </div>
+   )
+}
+```
+
+#### 39. How to write comments in React?
+
+- /* */
+- //
+
+
+#### 40. What is the purpose of using super constructor with props argument?
+
+in React Class copmonent using super(props)  does following
+- It takes the props and passes it to parent's constructor
+- the parent(React.component) constructor takes the props and assignes it to this.props
+- now this.props is available to use across the component and also in diffrent lifecycle methods.
+
+
+#### 41. What is reconciliation?
+
+When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is
+called **reconciliation**.
+
+
+#### 42. How to set state with a dynamic key name?
+
+```
+this.setState({ [event.target.id]: event.target.value })
+
+[event.target.id] is baacically the dynamic part
+```
+
+#### 43.  What would be the common mistake of function being called every time the component renders?
+ - dependency array might not be passed in useEffect.
+ - useCallback hook is not being used
+ - wrong assigning of function to handler
+  ``` return <button onClick={this.handleClick()}>{'Click Me'}</button>
+
+
+#### 44. Is lazy function supports named exports?
