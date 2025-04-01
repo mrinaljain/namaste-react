@@ -1,6 +1,6 @@
 import React  from "react";
 
-export const {Provider, Consumer} = React.createContext({
+export const appContext = React.createContext({
   name: "default Value",
   lastname: "default Jain",
 });

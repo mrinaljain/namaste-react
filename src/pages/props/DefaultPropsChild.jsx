@@ -20,7 +20,10 @@ DefaultPropsChild.defaultProps = {
    isEligible: "Default bool",
 }
 
-DefaultPropsChild.propTypes = { name: PropTypes.string.isRequired, job: PropTypes.string.isRequired, }
+DefaultPropsChild.propTypes = {
+   name: PropTypes.string.isRequired,
+   job: PropTypes.string.isRequired,
+}
 
 //https://legacy.reactjs.org/docs/typechecking-with-proptypes.html#proptypes
 

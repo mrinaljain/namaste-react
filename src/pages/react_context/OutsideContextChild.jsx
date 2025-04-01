@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import AppContext from '../../utils/appContext';
+import { appContext } from './appContext';
 
 function OutsideContextChild() {
-   const appContext = useContext(AppContext);
+   const appContext = useContext(appContext);
    return (
       <div>
          <h1 className='text-3xl'> OutsideContext  Child</h1>

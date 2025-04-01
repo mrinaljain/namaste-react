@@ -1,3 +1,5 @@
+<!-- 28 , 55 , 59 , 60 , 68 , 69 , 72 , 74  , 76  , 77 , 78 , 80 84 85 , 89-->
+
 #### 1. What is React?
 
 React is a Javascript library which makes the DOM manipulation more efficient with the help of Virtual DOM.Also
@@ -150,7 +152,7 @@ useRef // for functional components
 c // for class components
 ```
 
-### 20. How to create refs?
+#### 20. How to create refs?
 
 ```
 const inputRef = useRef(null);
@@ -206,6 +208,22 @@ Virtual DOM works on the algorthim of react fiber and the entire process is know
 - behind the scenes reach has another tree structure which react compares with the virtual DOM and makes changes in the Virtual DOM
 -finally with the help of diffing ALgorithm this changes are shifted to the Orignal DOM in batches.
 
+#### 26.  What is the difference between Shadow DOM and Virtual DOM?
+
+Shadow DOM is a private/protecte DOM inside the Browser DOM which is created by an external element like iframe.
+while Virtual DOM is part of the library.
+
+
+#### 27. What is React Fiber?
+
+React Fiber is the latest reconciliation Algorthim introduced in React 16 which improved the re-rendering process  wit the help of Virtual DOM.
+- it also batches similar state updates resulting even lesser DOM interaction.
+
+#### 28. What is the main goal of React Fiber?
+
+- Speed up reconciliation process
+- **Incremental Rendering**
+ 
 
 #### 29. What are controlled components?
 
@@ -338,18 +356,347 @@ called **reconciliation**.
 
 
 #### 42. How to set state with a dynamic key name?
-
+dd
 ```
 this.setState({ [event.target.id]: event.target.value })
 
 [event.target.id] is baacically the dynamic part
 ```
 
-#### 43.  What would be the common mistake of function being called every time the component renders?
+#### 43. What would be the common mistake of function being called every time the component renders?
+
+Common mistakes
  - dependency array might not be passed in useEffect.
  - useCallback hook is not being used
  - wrong assigning of function to handler
-  ``` return <button onClick={this.handleClick()}>{'Click Me'}</button>
+  ``` return <button onClick={this.handleClick()}>{'Click Me'}</button>```
 
 
 #### 44. Is lazy function supports named exports?
+
+lklk
+
+#### 45. Why React uses className over class attribute?
+
+React is built on top of Javascript and in javascript OOPs the Class is a protectected keyword, hence it is not used in Jsx syntax to avoid conflicts
+
+#### 46. What are fragments?
+
+Fragments are the element wrapers which allow us to enclose  around html elements to give a group  one common wrapper.
+
+
+#### 47. Why fragments are better than container divs?
+
+Fragments are better as they dont showup on DOM as a node and yet allow us to group HTML elements.
+- Faster
+- less space
+
+#### 48. What are portals in React?
+
+A React Portal provides a way to render a child component into a different part of the DOM rather than inside its parent component’s DOM hierarchy.
+
+```
+React.createPortal("Element", targetDiv, key)
+```
+
+#### 49. What are stateless components?
+
+Stateless components in react are the ones who does not have their own state object and they are dependent o the props recived from the parent element vie prop drilling.
+
+#### 50. What are stateful components?
+
+Statefull components in React are the ones who maintain there own state , either be it a class component using state object or functional component using the useState hook.
+
+#### 51. How to apply validation on props in React?
+
+validation can be appliud using proptypes
+```
+DefaultPropsChild.propTypes = {
+   name: PropTypes.string.isRequired,
+   job: PropTypes.string.isRequired,
+}
+```
+
+proptypes are depricated in latest react version as React is promoting use of typescript which is typesafe by default.
+
+#### 52. What are the advantages of React?
+
+- Less interaction with DOM
+- Modular code
+- Components available
+- Browser compatibility with JSX, synthetic events
+- Easy to write test cases, unit tests.
+
+
+#### 53. What are the limitations of React?
+
+- Doesnot support SEO as most content renders on browser .
+- heavy bundle size
+- React learning curve.
+
+
+#### 54. What are error boundaries in React v16?
+
+Error boundries in React are created with the help of a lifecycle hook in react componentDidCaatch.
+So basically we wrap the component with class component and check if there is an errr
+```
+
+
+```
+
+#### 55. How are error boundaries handled in React v15?
+
+How are error boundaries handled in React v15?
+Back to Top
+React v15 provided very basic support for error boundaries using unstable_handleError method. It has been renamed to componentDidCatch in React v16.
+
+
+#### 56. What are the recommended ways for static type checking?
+
+type checking can be implemented using type script Or by implementing defaultype proptype in  component.
+
+
+#### 57. What is the use of react-dom package?
+
+React is a frontend library that can work on diffrent platforms and environmemnts like web and mobile etc.
+React DOM package helps to render/connect the react functionality on the browser.
+- like defining the root element
+- rendering the jsx element
+
+#### 58. What is the purpose of render method of react-dom ?
+
+render method of react-dom is used to convert the js object which is returned by react which we call a react element into a DOM nod and render it on browser. 
+
+
+#### 59. What is ReactDOMServer?
+
+ReactDOMServer is the server for handeling 
+
+
+#### 60. How to use innerHTML in React?
+
+in React inner HTML can be replaced by {} and calling a react component to fill that space with th eElement.
+
+
+#### 61.  How to use styles in React?
+
+styles in react can be used in 3 ways 
+- inline style where we can directly add style tag to element in JSX and write css styles in camelCase.
+- other way is to create an objext with key value pairs in which key is property name and value is the css value , and later on pass object to the element;s style property.
+
+#### 62. How events are different in React?
+
+Events in react are synthetic , because react adds a wraper on top of regular DOM elements
+- click becomes OnClick
+this is done to maintain consistency and provide support for diffrent browsersBTS.
+
+#### 63. What will happen if you use setState() in constructor?
+
+ Can't call setState on a component that is not yet mounted.
+ kyu hi SetState call krna hai constructor mai, jo bhi value change kr reha o direct constructor mai hi assign kr do na.
+
+
+#### 64. What is the impact of indexes as keys?
+
+index as a keys are anti-pattern, because index  does not give gurante of uniqueness and also it can change based upon item removal or insertion.
+this can create issues during rerenders because React highly depends on keys during the reconciliation process.
+
+#### 65. Is it good to use setState() in componentWillMount() method?
+
+component will mount is the lifecycly hook that runs just before render hence we can use it for some specific purposes like calculating width , height of sceen etc
+BUT ITS NOT RECOMENDED
+
+#### 66. What will happen if you use props in initial state?
+
+using props in initial state state will work fine but 
+- prop value will not update because constructor only runs one time
+- better to use props outside , directly
+
+
+#### 67. How do you conditionally render components?
+
+We can use Logical operators like ?? or &&  or Ternirroy operator
+
+
+#### 68. Why we need to be careful when spreading props on DOM elements?
+
+
+#### 69. How you use decorators in React?
+
+#### 70. How do you memoize a component?
+
+in react we can memoize a component by passing it to another Higher order component known as React.memo right before exporting it 
+
+export default React.memo(Component)
+- it useses the shallow comparision which is less reliable.
+
+#### 71. How you implement Server Side Rendering or SSR?
+
+In react SSR can be implemented using ReactDOMServer
+- it converts React component into HTML string template 
+- the html string is further sent to user
+- this under goed dehydration which adds interactivity to the code.
+- following methods are available to be used
+   - renderToString
+   - renderToStaticMarkup
+   - renderReadablestream
+   - renderToPipableStream
+
+#### 72. How to enable production mode in React?
+
+
+
+#### 73. What is CRA and its benefits?
+
+CRA is  create react app and it is npm plugin which creates a initial react project with well definde folder structure  
+ - also pre adds important things like package bundler like bable 
+ - gives initial configuration file as package.json
+ - zero configurayion
+
+
+#### 74. What is the lifecycle methods order in mounting?
+
+- constructor
+- componentWillMount
+- render
+- copmonentDidMount
+
+
+#### 75. What are the lifecycle methods going to be deprecated in React v16?
+
+- componentWillMount
+- componentWillUpdate
+- componentWillReceiveProps
+
+
+#### 76. What is the purpose of getDerivedStateFromProps() lifecycle method?
+
+The purpose of get derived state from props
+
+
+#### 77. What is the purpose of getSnapshotBeforeUpdate() lifecycle method?
+
+
+#### 78. Do Hooks replace render props and higher order components?
+
+
+#### 79. What is the recommended way for naming components?
+
+Recomended way of naming components in react is the camelcase with first letter capital.
+- also knone as pascle case or uppercamelcase
+- name of component and name of file should be same
+
+
+#### 80. What is the recommended ordering of methods in component
+class?
+
+i. static methods
+ii. constructor()
+iii. getChildContext()
+iv. componentWillMount()
+v. componentDidMount()
+vi. componentWillReceiveProps()
+vii. shouldComponentUpdate()
+viii. componentWillUpdate()
+ix. componentDidUpdate()
+x. componentWillUnmount()
+xi. click handlers or event handlers like onClickSubmit() or onChangeDescription()
+xii. getter methods for render like getSelectReason() or getFooterContent()
+xiii. optional render methods like renderNavigation() or renderProfilePicture()
+xiv. render()
+
+
+#### 81. What is a switching component?
+
+Switching component is a component which handels multiple components and rendesd on based on props value
+```
+const PAGES = {
+  home: HomePage,
+  about: AboutPage,
+  services: ServicesPage,
+  contact: ContactPage
+}
+const Page = (props) => {
+  const Handler = PAGES[props.page] || ContactPage
+  return <Handler {...props} />
+}
+```
+
+#### 82. Why we need to pass a function to setState()? || Why function is preferred over object for setState() ?
+
+setstate can take direct value of state object as well , but providing function gives us access to the previous value of state object which helps us in updating value asyncly.
+
+#### 83. What is strict mode in React?
+
+Strict mode in react puts some extra checks and debuging levels for the developement phase.
+- it runs stateUpdates twice just to be sure
+- warns about deperecated methods
+
+#### 84.  What are React Mixins?[deprecated]
+
+React mixins acts as a universal functionalites that can be added as an extra addon to any components.
+
+#### 85. Why is isMounted() an anti-pattern and what is the proper
+solution?
+
+
+
+#### 86. What are the Pointer Events supported in React?
+
+Here are the common pointer events supported in React:
+
+onPointerDown: Triggered when the pointer is pressed down (similar to mousedown).
+
+onPointerUp: Triggered when the pointer is released (similar to mouseup).
+
+onPointerMove: Triggered when the pointer is moved across the screen.
+
+onPointerEnter: Triggered when the pointer enters the element (similar to mouseenter).
+
+onPointerLeave: Triggered when the pointer leaves the element (similar to mouseleave).
+
+onPointerOver: Triggered when the pointer moves over the element (similar to mouseover).
+
+onPointerOut: Triggered when the pointer moves out of the element (similar to mouseout).
+
+onPointerCancel: Triggered when a pointer event is canceled, like when a touch event is interrupted.
+
+onPointerMove: Similar to onMouseMove, it's triggered when a pointer is moved across an element.
+
+
+#### 87. Why should component names start with capital letter?
+
+- because lowercase ko React DOM eement samaj leta hai
+
+
+#### 88. Are custom DOM attributes supported in React v16?
+
+YES
+
+#### 89. What is the difference between constructor and getInitialState?[deprecated]
+
+constructor initiliases the class and  sets the values yo the current class.
+
+
+#### 90. Can you force a component to re-render without calling setState?
+
+- **forceUpdate** in class component
+- updating key in functionalcomponent also triggers rerender
+- useReducer
+
+#### 91. What is the difference between super() and super(props) in React using ES6 classes?
+
+super method is useed to initilise the parent constructor of the clasee
+- super(props) sends props to the parent constructor and the parent constrictor sets props to this.props which makes it available across the components
+- this also binds props changes with lifecycke hooks
+
+
+#### 92.  How to loop inside JSX?
+
+by using javascript syntax with the help of curly brackets
+```
+{map.forEach(callback)}
+{map.map(callback)}
+```
+
+#### 93.

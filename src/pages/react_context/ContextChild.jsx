@@ -1,7 +1,6 @@
 import React from 'react'
 import { useContext } from 'react';
-import appContext from '../../utils/appContext';
-import { Consumer } from './appContext';
+import { appContext } from './appContext';
 
 function ContextChild() {
 
