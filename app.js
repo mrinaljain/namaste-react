@@ -9,9 +9,9 @@ const reactRoot = createRoot(rootElement);
 
 function App() {
   return (
-    <StrictMode>
-      <RouterProvider router={router}></RouterProvider>
-    </StrictMode>
+    // <StrictMode>
+    <RouterProvider router={router}></RouterProvider>
+    // </StrictMode>
   );
 }
 reactRoot.render(<App />);

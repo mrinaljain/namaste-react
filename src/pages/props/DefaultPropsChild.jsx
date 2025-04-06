@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes, { number } from 'prop-types';
 
 function DefaultPropsChild({ name }) {
 
@@ -23,6 +23,7 @@ DefaultPropsChild.defaultProps = {
 DefaultPropsChild.propTypes = {
    name: PropTypes.string.isRequired,
    job: PropTypes.string.isRequired,
+   age: PropTypes.oneOfType([PropTypes.string, PropTypes, number])
 }
 
 //https://legacy.reactjs.org/docs/typechecking-with-proptypes.html#proptypes
