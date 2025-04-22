@@ -11,7 +11,7 @@
    -  useReducer takes a reducer function and initial state
       returns stateObject and dispatcher.
    ```
-   const [state, dispatch] = useReducer(reducer, initialState);
+   const [state, dispatch] = useReducer(reducer, initialState,init);
 
    ```
    *state*: represents the current value and is set to the initialState value during the initial render.
@@ -19,6 +19,8 @@
    *reducer*: is a function that houses all the logic of how the state gets updated. It takes state and action as arguments and returns the next state.
    *initialState*: houses the initial value and can be of any type.
    - The reducer function is always declared outside of your component and takes in a current state and action as arguments.
+   
+   *init*: The initializer function that should return the initial state. If it’s not specified, the initial state is set to initialArg. Otherwise, the initial state is set to the result of calling init(initialArg).
    
       [Read more ](https://www.freecodecamp.org/news/react-usereducer-hook/)
 

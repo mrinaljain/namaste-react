@@ -1,20 +1,20 @@
 import React, { useReducer, useState } from "react";
+function reducer(state, action) {
+   switch (action.type) {
+      case "add":
+         return [...state, action.payload];
+      case "remove":
+         let newtodo = state.filter((item) => item !== action.payload);
+         return newtodo;
 
+      default:
+         break;
+   }
+}
 function ToDoReducer() {
    const [state, dispatch] = useReducer(reducer, []);
    const [todo, setTodo] = useState("");
-   function reducer(state, action) {
-      switch (action.type) {
-         case "add":
-            return [...state, action.payload];
-         case "remove":
-            let newtodo = state.filter((item) => item !== action.payload);
-            return newtodo;
 
-         default:
-            break;
-      }
-   }
    function addTodo(e, text) {
       e.preventDefault();
       dispatch({ type: "add", payload: text });

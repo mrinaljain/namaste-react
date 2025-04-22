@@ -27,13 +27,18 @@ import HigherOrderComponent from "./src/pages/higher_order/HigherOrderComponent"
 import Timer from "./src/pages/Timer";
 import SkyDive from "./src/pages/SkyDive";
 import ForwardRef from "./src/pages/forward_ref/parent";
+import Grid from "./src/pages/Grid";
+import GridView from "./src/pages/machine_coding/GridView";
+import CheckBoxList from "./src/pages/machine_coding/CheckBoxList";
+import Table from "./src/pages/machine_coding/Table";
 
 const Lazycomp = lazy(() => import("./src/pages/LazyComponent"));
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    // element: <Home />,
+    element: <Table />,
   },
   {
     path: "/skyDive",
